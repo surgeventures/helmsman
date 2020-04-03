@@ -78,7 +78,7 @@ dep-update: $(SRCDIR) ## Ensure vendors with dep
 
 build: dep ## Build the package
 	@cd $(PRJDIR) && \
-	  go build -ldflags '-X main.version="${TAG}-${DATE}" -extldflags "-static"'
+	  go build -ldflags '-s -w -X main.version="${TAG}-${DATE}" -extldflags "-static"'
 
 generate:
 	@go generate #${PKGS}
